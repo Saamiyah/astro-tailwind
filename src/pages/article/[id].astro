@@ -1,0 +1,20 @@
+---
+const { id } = Astro.params;
+
+const articleResponse = await fetch(
+  `https://api.spaceflightnewsapi.net/v3/articles/${id}`
+);
+
+const articleData = await articleResponse.json();
+---
+
+<div class=" m-12 text-primary-accent ">
+    <h1 class="pb-4 text-4xl">{articleData.title}</h1>
+        <h2 class="pb-4 text-slate-500 text-2xl">{articleData.newsSite}</h2>
+    <div class="flex flex-col justify-center">
+        <img src={articleData.imageUrl} class=" w-auto h-auto" />
+        <div class=" mt-6 bg-slate-100 p-6">
+        <p class="mt-4 text-xl">{articleData.summary}</p>
+        </div>
+    </div>
+</div>
