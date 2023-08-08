@@ -1,11 +1,13 @@
 ---
-const {article, articleType}  = Astro.props;
+const { article, articleType } = Astro.props;
 ---
-    <div class="bg-white rounded-lg p-6 flex flex-col gap-4 cursor-pointer relative" >
-        <img src={article.imageUrl} class="w-full h-auto block " />
-        <h2 class="text-gray-700 text-xl font-bold">{article.title}</h2>
-        <p class="text-gray-800">{article.summary}</p> 
-        <a href={`/${articleType}/${article.id}`} class="absolute inset-0" />
-    </div>
 
-	
+<div
+  class="bg-white rounded-lg p-6 flex flex-col gap-4 cursor-pointer relative"
+>
+  <a href={`/${articleType}/${article.id}`}>
+    <img src={article.imageUrl} class="w-full h-auto block" />
+  </a>
+  <h2 class="text-gray-700 text-xl font-bold">{article.title}</h2>
+  <p class="text-gray-800">{article.summary}</p>
+</div>
