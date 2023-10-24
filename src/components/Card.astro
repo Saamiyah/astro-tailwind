@@ -5,6 +5,35 @@ const test = article.id;
 if (false) {
   // This block is empty
 }
+
+const x = 10;
+x = 20; // This will generate a "no-const-assign" error.
+
+if (article.id == "10") {
+  // This may generate a "eqeqeq" warning.
+}
+
+if (article) return result; // This may generate a "curly" warning.
+
+function longFunctionWithALotOfArguments(
+  arg1,
+  arg2,
+  arg3,
+  arg4,
+  arg5,
+  arg6,
+  arg7,
+  arg8,
+  arg9,
+  arg10,
+  arg11,
+  arg12,
+  arg13
+) {
+  // This may generate a "max-params" or "max-len" warning.
+}
+
+longFunctionWithALotOfArguments();
 ---
 
 <div
